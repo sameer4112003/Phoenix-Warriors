@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Building Libraries</title>
+    <style>
+        /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    padding-bottom: 20px;
+}
+
+.library-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: auto;
+}
+
+.library-item {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.library-item h2 {
+    margin: 0;
+    color: #333;
+}
+
+.library-item .address {
+    font-style: italic;
+    color: #666;
+}
+
+.library-item .description {
+    color: #555;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <script src="script.js">
+        function updateRating(libraryId) {
+    // Randomly update the ratings
+    const newRating = (Math.random() * 5).toFixed(1);
+    const ratingElement = document.querySelector(`#${libraryId} .rating`);
+    ratingElement.innerText = `Ratings: ${newRating}/5`;
+}
+    </script>
+</head>
+<body>
+    <h1>List of Building Libraries</h1>
+    <ul class="library-list">
+        <!-- Template for a library in list form -->
+        <li class="library-item" id="library-1">
+            <h2>Delhi Central Library</h2>
+            <p>Connaught Place, New Delhi, Delhi 110001</p>
+            <p>A large library located in the heart of New Delhi, offering a wide range of books and periodicals.</p>
+            <p class="rating">Ratings: 4.5/5</p>
+            <button onclick="updateRating('library-1')">Update Rating</button>
+        </li>
+
+        <li class="library-item" id="library-2">
+            <h2>Mumbai City Library</h2>
+            <p>Churchgate, Mumbai, Maharashtra 400020</p>
+            <p>Known for its extensive collection of business and finance books, located near the Gateway of India.</p>
+            <p class="rating">Ratings: 4.3/5</p>
+            <button onclick="updateRating('library-2')">Update Rating</button>
+        </li>
+
+        <li class="library-item" id="library-3">
+            <h2>Chennai Public Library</h2>
+            <p>Mount Road, Chennai, Tamil Nadu 600002</p>
+            <p>Offers a variety of regional literature and hosts cultural events and workshops.</p>
+            <p class="rating">Ratings: 4.2/5</p>
+            <button onclick="updateRating('library-3')">Update Rating</button>
+        </li>
+
+        <li class="library-item" id="library-4">
+            <h2>Bengaluru Knowledge Library</h2>
+            <p>MG Road, Bengaluru, Karnataka 560001</p>
+            <p>Known for its collection of technology and engineering books, with modern reading spaces.</p>
+            <p class="rating">Ratings: 4.4/5</p>
+            <button onclick="updateRating('library-4')">Update Rating</button>
+        </li>
+
+        <li class="library-item" id="library-5">
+            <h2>Kolkata Central Library</h2>
+            <p>Park Street, Kolkata, West Bengal 700016</p>
+            <p>A well-known library with a rich history and a large collection of rare books and manuscripts.</p>
+            <p class="rating">Ratings: 4.5/5</p>
+            <button onclick="updateRating('library-5')">Update Rating</button>
+        </li>
+
+        <!-- Continue with the remaining libraries to reach 15 -->
+        
+        <li class="library-item" id="library-6">
+            <h2>Ahmedabad Public Library</h2>
+            <p>CG Road, Ahmedabad, Gujarat 380009</p>
+            <p>Offers a diverse collection of books and journals, with a dedicated children's section.</p>
+            <p class="rating">Ratings: 4.3/5</p>
+            <button onclick="updateRating('library-6')">Update Rating</button>
+        </li>
+
+        <li class="library-item" id="library-7">
+            <h2>Hyderabad City Library</h2>
+            <p>Begumpet, Hyderabad, Telangana 500016</p>
+            <p>Known for its extensive collection of Islamic literature and historical archives.</p>
+            <p class="rating">Ratings: 4.2/5</p>
+            <button onclick="updateRating('library-7')">Update Rating</button>
+        </li>
+        
+        <li class="library-item" id="library-8">
+            <h2>Pune Literature Library</h2>
+            <p>FC Road, Pune, Maharashtra 411005</p>
+            <p>Known for its extensive collection of Marathi literature and regular literary events.</p>
+            <p class="rating">Ratings: 4.3/5</p>
+            <button onclick="updateRating('library-8')">Update Rating</button>
+        </li>
+        
+        <li class="library-item" id="library-9">
+            <h2>Jaipur City Library</h2>
+            <p>MI Road, Jaipur, Rajasthan 302001</p>
+            <p>Known for its historical significance and a large collection of cultural books.</p>
+            <p class="rating">Ratings: 4.2/5</p>
+            <button onclick="updateRating('library-9')">Update Rating</button>
+        </li>
+
+        <li class="library-item" id="library-10">
+            <h2>Lucknow Public Library</h2>
+            <p>Hazratganj, Lucknow, Uttar Pradesh 226001</p>
+            <p>Offers a variety of Indian and international literature, with a focus on arts and crafts.</p>
+            <p class="rating">Ratings: 4.3/5</p>
+            <button onclick="updateRating('library-10')">Update Rating</button>
+        </li>
+
+        <!-- Continue until 15 -->
+        
+    </ul>
+</body>
+</html>

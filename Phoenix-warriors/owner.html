@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Property</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: hsl(195, 54%, 44%);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            background-color: hsl(195, 54%, 44%);
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        #upload-preview img {
+            max-width: 100px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        #submit-popup {
+            display: none;
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .popup-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .popup-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>List Your Property</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="card">
+            <div class="card-header">
+                <h2>Add Details to Your Property</h2>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="property-name">Property Name:</label>
+                    <input type="text" id="property-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-description">Description:</label>
+                    <textarea id="property-description" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="property-location">Location:</label>
+                    <input type="text" id="property-location" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-type">Property Type:</label>
+                    <select id="property-type" class="form-control" required>
+                        <option value="house">House</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="condo">Condo</option>
+                        <option value="villa">Villa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="file-upload">Upload Photos & Videos:</label>
+                    <input type="file" id="file-upload" class="form-control-file" multiple>
+                    <small class="form-text text-muted">Maximum file size: 5MB</small>
+                    <div id="upload-preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Add Pricing</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="availability">Availability:</label>
+                            <input type="date" id="availability" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="submit-btn">Submit</button>
+
+        <!-- Submit Popup -->
+        <div id="submit-popup" class="popup">
+            <div class="popup-content">
+                <p>Are you sure that all information are correct and honest?</p>
+                <button id="submit-confirm" class="popup-btn">Yes, Submit</button>
+                <button id="submit-cancel" class="popup-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript code
+        document.getElementById('file-upload').addEventListener('change', function() {
+            const preview = document.getElementById('upload-preview');
+            preview.innerHTML = '';
+
+            const files = this.files;
+            for (let i = 0; i < files.length; i++) {
+                if (files[i].type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const img = document.createElement('img');
+                        img.src = event.target.result;
+                        preview.appendChild(img);
+                    }
+                    reader.readAsDataURL(files[i]);
+                }
+            }
+        });
+
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            document.getElementById('submit-popup').style.display = 'block';
+        });
+
+        document.getElementById('submit-confirm').addEventListener('click', function() {
+            const propertyName = document.getElementById('property-name').value;
+            const propertyDescription = document.getElementById('property-description').value;
+            const propertyLocation = document.getElementById('property-location').value;
+            const propertyType = document.getElementById('property-type').value;
+            const price = document.getElementById('price').value;
+            const availability = document.getElementById('availability').value;
+
+            // You can further process this data, like sending it to a server, or displaying it in a modal, etc.
+            console.log({
+                propertyName,
+                propertyDescription,
+                propertyLocation,
+                propertyType,
+                price,
+                availability
+            });
+
+            // Reset form
+            document.getElementById('property-name').value = '';
+            document.getElementById('property-description').value = '';
+            document.getElementById('property-location').value = '';
+            document.getElementById('property-type').value = 'house';
+            document.getElementById('price').value = '';
+            document.getElementById('availability').value = '';
+
+            document.getElementById('upload-preview').innerHTML = '';
+
+            document.getElementById('submit-popup').style.display = 'none';
+        });
+
+        document.getElementById('submit-cancel').addEventListener('click', function() {
+            document.getElementById('submit-popup').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

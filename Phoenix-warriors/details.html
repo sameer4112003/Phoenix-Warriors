@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-slider {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        .details h2 {
+            color: #007bff;
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        .owner-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .owner-info h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image-slider">
+        <img class="home-image" src="https://farm2.staticflickr.com/1923/44922095584_c04c0e9b90_z.jpg" alt="Home Image">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    <div class="details">
+        <h2>Home Details</h2>
+        <p><strong>Address:</strong> 123 Main St, New Delhi, Delhi 110001</p>
+        <p><strong>Price:</strong> ₹2,00,000</p>
+        <p><strong>Area:</strong> 2000 sqft</p>
+        <p><strong>Pin Code:</strong> 110001</p>
+    </div>
+    
+    <div class="owner-info">
+        <h2>Owner Information</h2>
+        <p><strong>Name:</strong> Rajesh Kumar</p>
+        <p><strong>Contact:</strong> rajesh.kumar@example.com</p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.home-image');
+
+    function showSlide(n) {
+        if (n >= slides.length) {
+            currentSlide = 0;
+        }
+        if (n < 0) {
+            currentSlide = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[currentSlide].style.display = "block";
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide -= 1);
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide += 1);
+    }
+
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>

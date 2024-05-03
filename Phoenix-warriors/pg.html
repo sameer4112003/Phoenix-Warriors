@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Property Listings - 3x3 Grid</title>
+    <!-- Link to the CSS file for styles -->
+    <style>
+        /* General styles for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Light background color for visibility */
+}
+
+/* Grid layout for property listings */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    gap: 20px; /* Space between grid items */
+    width: 80vw; /* 80% of the viewport's width */
+    height: 80vh; /* 80% of the viewport's height */
+}
+
+/* Styling for each home in the grid */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc; /* Light border */
+    background-color: #f9f9f9;
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Add a shadow on hover for visual feedback */
+.home:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Styling for the photo section */
+.photo {
+    width: 100%; /* Full width for the container */
+}
+
+.photo img {
+    width: 100%; /* Image takes full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Styling for buttons */
+button {
+    padding: 10px 20px; /* Comfortable padding */
+    background-color: #4CAF50; /* Green color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Styles for the detailed information section */
+.info-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Limit width for readability */
+    margin: 20px;
+}
+
+.info-image {
+    width: 600px; /* Fixed width for image */
+    height: 400px; /* Fixed height for image */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ccc; /* Placeholder color for empty image */
+    text-align: center; /* Center text */
+    line-height: 400px; /* Center text vertically */
+}
+
+.info-image img {
+    width: 100%; /* Fill the container's width */
+    height: 100%; /* Fill the container's height */
+    object-fit: cover; /* Ensure the image covers the whole area */
+}
+
+    </style>
+
+</head>
+<body>
+
+<!-- 3x3 grid for property listings -->
+<div class="grid-container" id="home-grid">
+    <!-- Homes will be inserted here by JavaScript -->
+</div>
+
+<!-- Hidden section for detailed information about a property -->
+<div class="info-container" id="more-info" style="display: none;">
+    <h2>More Information</h2>
+    <div class="info-image">
+        <!-- Placeholder for an image (600x400) -->
+        <img src="house1_large.jpg" alt="House Image" />
+    </div>
+    <!-- Property details -->
+    <p><strong>Address:</strong> 123, MG Road, Bangalore, Karnataka, India</p>
+    <p><strong>Rent:</strong> ₹30,000 per month</p>
+    <p><strong>Details:</strong> This apartment has 3 bedrooms, 2 bathrooms, a large balcony, and a modular kitchen. It's close to IT parks, shopping malls, and public transportation.</p>
+    <p><strong>Amenities:</strong> 24/7 security, gym, swimming pool, car parking, and backup power.</p>
+    <p><strong>Contact Information:</strong> Call at +91 98765 43210 or email at agent@example.com.</p>
+</div>
+
+<!-- Include the JavaScript file for dynamic content -->
+<script>
+    // List of property details
+
+    const imageLinks = [
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h300_w450/72546279_5_PropertyImage1714489440267_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h300_w450/72546279_3_PropertyImage1714489424173_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h600_w900/72538153_5_PropertyImage1714464097552_600_900.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h300_w450/72538153_6_PropertyImage1714464104589_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/13/Photo_h300_w450/72294301_1_PropertyImage1713029953860_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/13/Photo_h300_w450/72294301_2_PropertyImage1713029975453_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/May/01/Photo_h600_w900/72556165_4_ryanANchal3BHKLivingRm1a_600_900.JPG",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/May/01/Photo_h300_w450/72556165_3_ryanAnchal3BHKLivingRm1c_300_450.JPG",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Dec/20/Photo_h300_w450/66264813_3_PropertyImage1703082307306_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/May/01/Photo_h300_w450/72346535_13_72346535_13_PropertyImage843-0773737343421_300_450.jpg",
+    "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/21/Photo_h300_w450/70881025_6_IMG20240120WA0038_300_450.jpg",
+    "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/02/12/Project-Photo-113-Piramal-Revanta-Mumbai-5098339_675_1200_310_462.jpg",
+    "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2021/12/14/Project-Photo-17-Purva-Clermont-Mumbai-5235629_400_920_310_462.jpg",
+    "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/02/14/Project-Photo-10-Rustomjee-Stella-Mumbai-5418509_780_1600_310_462.jpg",
+    "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/01/05/Project-Photo-6-Aventus-Westbrook-Mumbai-5416941_898_1600_310_462.jpg",
+    "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/03/13/Project-Photo-4-Aerovista-Mumbai-5418181_1492_1600_310_462.jpg",
+    "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/04/23/Project-Photo-16-Chandak-Treesourus-Mumbai-5407899_1188_1600_310_462.jpg"
+];
+
+const homes = [
+    { 
+        title: "Apartment in Bangalore", 
+        address: "123, MG Road, Bangalore, Karnataka, India", 
+        rent: "₹30,000 per month", 
+        image: imageLinks[0]
+    },
+    { 
+        title: "Flat in Mumbai", 
+        address: "456, Marine Drive, Mumbai, Maharashtra, India", 
+        rent: "₹40,000 per month", 
+        image: imageLinks[1]
+    },
+    { 
+        title: "House in Delhi", 
+        address: "789, Connaught Place, Delhi, India", 
+        rent: "₹35,000 per month", 
+        image: imageLinks[2]
+    },
+    { 
+        title: "Villa in Chennai", 
+        address: "101, Anna Salai, Chennai, Tamil Nadu, India", 
+        rent: "₹50,000 per month", 
+        image: imageLinks[3]
+    },
+    { 
+        title: "Bungalow in Pune", 
+        address: "202, FC Road, Pune, Maharashtra, India", 
+        rent: "₹45,000 per month", 
+        image: imageLinks[4]
+    },
+    { 
+        title: "Duplex in Hyderabad", 
+        address: "303, Banjara Hills, Hyderabad, Telangana, India", 
+        rent: "₹55,000 per month", 
+        image: imageLinks[5]
+    },
+    { 
+        title: "Condo in Kolkata", 
+        address: "404, Park Street, Kolkata, West Bengal, India", 
+        rent: "₹32,000 per month", 
+        image: imageLinks[6]
+    },
+    { 
+        title: "Penthouse in Gurgaon", 
+        address: "505, Cyber City, Gurgaon, Haryana, India", 
+        rent: "₹65,000 per month", 
+        image: imageLinks[7]
+    },
+    { 
+        title: "Studio in Ahmedabad", 
+        address: "606, SG Highway, Ahmedabad, Gujarat, India", 
+        rent: "₹28,000 per month", 
+        image: imageLinks[8]
+    },
+];
+
+console.log(homes);
+
+
+// Reference to the grid container where homes will be inserted
+const grid = document.getElementById("home-grid");
+
+// Function to create a property box
+function createHomeBox(home) {
+    const homeDiv = document.createElement("div");
+    homeDiv.className = "home";
+
+    const photoDiv = document.createElement("div");
+    photoDiv.className = "photo";
+    const img = document.createElement("img");
+    img.src = home.image; // Ensure image path is correct
+    img.alt = home.title; // Set alt text for accessibility
+    photoDiv.appendChild(img);
+
+    const title = document.createElement("h2");
+    title.textContent = home.title;
+
+    const address = document.createElement("p");
+    address.innerHTML = `<strong>Address:</strong> ${home.address}`;
+
+    const rent = document.createElement("p");
+    rent.innerHTML = `<strong>Rent:</strong> ${home.rent}`;
+
+    const button = document.createElement("button");
+    button.textContent = "More Information";
+    button.addEventListener("click", () => {
+        const info = document.getElementById("more-info");
+        info.style.display = "block"; // Show the detailed info section
+    });
+
+    // Add elements to the home box
+    homeDiv.appendChild(photoDiv);
+    homeDiv.appendChild(title);
+    homeDiv.appendChild(address);
+    homeDiv.appendChild(rent);
+    homeDiv.appendChild(button);
+
+    return homeDiv;
+}
+
+// Insert each home into the grid
+homes.forEach((home) => {
+    const homeBox = createHomeBox(home);
+    grid.appendChild(homeBox); // Append the home box to the grid
+});
+
+</script>
+
+</body>
+</html>

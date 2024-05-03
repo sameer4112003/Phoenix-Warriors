@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .home-card {
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .home-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .home-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .home-card .details-btn {
+            display: block;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 14px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-card .details-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .details-btn:focus {
+            outline: none;
+        }
+
+        .details-btn:active {
+            transform: translateY(1px);
+        }
+
+        .details {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        #map {
+            width: 100%;
+            height: 50vh;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .home-card div {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Find Your Home</h1>
+
+<div class="container" id="homes-list"></div>
+
+<div id="map" style="display: none;"></div>
+
+<script>
+    const homes = [
+    {
+        id: 1,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h300_w450/72546279_5_PropertyImage1714489440267_300_450.jpg',
+        price: '₹200,000',
+        address: '123 Main St',
+        city: 'Mumbai',
+        state: 'Maharashtra',
+        zip: '400001',
+        latitude: 19.0760,
+        longitude: 72.8777,
+    },
+    {
+        id: 2,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h300_w450/72546279_3_PropertyImage1714489424173_300_450.jpg',
+        price: '₹250,000',
+        address: '456 Elm St',
+        city: 'Navi Mumbai',
+        state: 'Maharashtra',
+        zip: '400701',
+        latitude: 19.0330,
+        longitude: 73.0297,
+    },
+    {
+        id: 3,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h600_w900/72538153_5_PropertyImage1714464097552_600_900.jpg',
+        price: '₹300,000',
+        address: '789 Oak St',
+        city: 'Thane',
+        state: 'Maharashtra',
+        zip: '400601',
+        latitude: 19.2183,
+        longitude: 72.9781,
+    },
+    {
+        id: 4,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/30/Photo_h300_w450/72538153_6_PropertyImage1714464104589_300_450.jpg',
+        price: '₹220,000',
+        address: '101 Pine St',
+        city: 'Kalyan',
+        state: 'Maharashtra',
+        zip: '421301',
+        latitude: 19.2471,
+        longitude: 73.1350,
+    },
+    {
+        id: 5,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/13/Photo_h300_w450/72294301_1_PropertyImage1713029953860_300_450.jpg',
+        price: '₹280,000',
+        address: '555 Cedar St',
+        city: 'Panvel',
+        state: 'Maharashtra',
+        zip: '410206',
+        latitude: 18.9888,
+        longitude: 73.1102,
+    },
+    {
+        id: 6,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Apr/13/Photo_h300_w450/72294301_2_PropertyImage1713029975453_300_450.jpg',
+        price: '₹190,000',
+        address: '222 Maple St',
+        city: 'Virar',
+        state: 'Maharashtra',
+        zip: '401303',
+        latitude: 19.4657,
+        longitude: 72.8062,
+    },
+    {
+        id: 7,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/May/01/Photo_h600_w900/72556165_4_ryanANchal3BHKLivingRm1a_600_900.JPG',
+        price: '₹260,000',
+        address: '999 Elm St',
+        city: 'Badlapur',
+        state: 'Maharashtra',
+        zip: '421503',
+        latitude: 19.1552,
+        longitude: 73.2650,
+    },
+    {
+        id: 8,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/May/01/Photo_h300_w450/72556165_3_ryanAnchal3BHKLivingRm1c_300_450.JPG',
+        price: '₹320,000',
+        address: '777 Oak St',
+        city: 'Dombivli',
+        state: 'Maharashtra',
+        zip: '421201',
+        latitude: 19.2183,
+        longitude: 73.0865,
+    },
+    {
+        id: 9,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2023/Dec/20/Photo_h300_w450/66264813_3_PropertyImage1703082307306_300_450.jpg',
+        price: '₹230,000',
+        address: '333 Walnut St',
+        city: 'Ambernath',
+        state: 'Maharashtra',
+        zip: '421501',
+        latitude: 19.1879,
+        longitude: 73.1864,
+    },
+    {
+        id: 10,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/May/01/Photo_h300_w450/72346535_13_72346535_13_PropertyImage843-0773737343421_300_450.jpg',
+        price: '₹270,000',
+        address: '444 Pine St',
+        city: 'Ulhasnagar',
+        state: 'Maharashtra',
+        zip: '421002',
+        latitude: 19.2215,
+        longitude: 73.1645,
+    },
+    {
+        id: 11,
+        image: 'https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/21/Photo_h300_w450/70881025_6_IMG20240120WA0038_300_450.jpg',
+        price: '₹210,000',
+        address: '888 Maple St',
+        city: 'Palghar',
+        state: 'Maharashtra',
+        zip: '401404',
+        latitude: 19.6968,
+        longitude: 72.7653,
+    },
+    {
+        id: 12,
+        image: 'https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/02/12/Project-Photo-113-Piramal-Revanta-Mumbai-5098339_675_1200_310_462.jpg',
+        price: '₹290,000',
+        address: '111 Oak St',
+        city: 'Boisar',
+        state: 'Maharashtra',
+        zip: '401501',
+        latitude: 19.7943,
+        longitude: 72.7607,
+    },
+    {
+        id: 13,
+        image: 'https://img.staticmb.com/mbimages/project/Photo_h310_w462/2021/12/14/Project-Photo-17-Purva-Clermont-Mumbai-5235629_400_920_310_462.jpg',
+        price: '₹300,000',
+        address: '777 Cedar St',
+        city: 'Vasai',
+        state: 'Maharashtra',
+        zip: '401202',
+        latitude: 19.3907,
+        longitude: 72.8397,
+    },
+    {
+        id: 14,
+        image: 'https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/02/14/Project-Photo-10-Rustomjee-Stella-Mumbai-5418509_780_1600_310_462.jpg',
+        price: '₹280,000',
+        address: '222 Elm St',
+        city: 'Virar West',
+        state: 'Maharashtra',
+        zip: '401303',
+        latitude: 19.4657,
+        longitude: 72.8062,
+    },
+    {
+        id: 15,
+        image: 'https://img.staticmb.com/mbimages/project/Photo_h310_w462/2024/01/05/Project-Photo-6-Aventus-Westbrook-Mumbai-5416941_898_1600_310_462.jpg',
+        price: '₹320,000',
+        address: '555 Walnut St',
+        city: 'Vasai East',
+        state: 'Maharashtra',
+        zip: '401208',
+        latitude: 19.3794,
+        longitude: 72.8295,
+    },
+];
+
+console.log(homes);
+
+
+
+    const homesList = document.getElementById('homes-list');
+
+    homes.forEach(home => {
+        const homeCard = document.createElement('div');
+        homeCard.classList.add('home-card');
+        homeCard.innerHTML = `
+            <img src="${home.image}" alt="Home Image">
+            <div>
+                <div>${home.address}, ${home.city}, ${home.state} ${home.zip}</div>
+                <div>${home.price}</div>
+                <button class="details-btn" onclick="showDetails(${home.id})">Details</button>
+            </div>
+        `;
+        homesList.appendChild(homeCard);
+    });
+
+    function showDetails(id) {
+        const home = homes.find(h => h.id === id);
+        window.location.href = `details.html?id=${home.id}`;
+    }
+</script>
+
+</body>
+</html>

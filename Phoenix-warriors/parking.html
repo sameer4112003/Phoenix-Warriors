@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Space Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .building {
+            width: calc(50% - 20px);
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .building:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .building img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .building-info {
+            padding: 20px;
+        }
+        
+        h2 {
+            margin-top: 0;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .building-info p:first-of-type {
+            margin-top: 0;
+        }
+        
+        .building-info p:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        .building-info p strong {
+            color: #333;
+        }
+        
+        .building-info p {
+            line-height: 1.5;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 30px;">Parking Space Options</h1>
+    <div class="container">
+        <div class="building" id="building1">
+            <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/08/14/858787-underground-parking.jpg" alt="Building 1">
+            <div class="building-info">
+                <h2>Building 1</h2>
+                <p><strong>Two Wheeler Parking:</strong> 50 spaces available, Price: ₹100 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 100 spaces available, Price: ₹200 (Monthly)</p>
+                <p>Located in downtown, Building 1 offers spacious parking facilities with 24/7 security.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <!-- Add more buildings here -->
+        <div class="building" id="building2">
+            <img src="https://t4.ftcdn.net/jpg/03/30/78/85/360_F_330788577_0DDjwHh2WYlf4DQJt5d0eMqzMZ9mMy4C.jpg" alt="Building 2">
+            <div class="building-info">
+                <h2>Building 2</h2>
+                <p><strong>Two Wheeler Parking:</strong> 30 spaces available, Price: ₹80 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 70 spaces available, Price: ₹150 (Monthly)</p>
+                <p>Building 2 is situated in a commercial area, providing convenient parking options for tenants.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTohOgn_5WqFwxaPlSwikYv1KTG7tac--As3XBSAkIxrg&s" alt="Building 3">
+            <div class="building-info">
+                <h2>Building 3</h2>
+                <p><strong>Two Wheeler Parking:</strong> 40 spaces available, Price: ₹120 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 80 spaces available, Price: ₹180 (Monthly)</p>
+                <p>Building 3 is located near the city center with easy access to public transportation.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwMbzJIFitcH4EtRQ6dbaZ7IX1qtWTPizJF1b1bsm5w&s" alt="Building 4">
+            <div class="building-info">
+                <h2>Building 4</h2>
+                <p><strong>Two Wheeler Parking:</strong> 60 spaces available, Price: ₹150 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 120 spaces available, Price: ₹250 (Monthly)</p>
+                <p>Building 4 is located in a residential area with secure parking facilities.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building5">
+            <img src="https://img.staticmb.com/mbcontent/images/uploads/2022/8/Laws-and-Parking-Rules-in-Residential-Areas-India.jpg" alt="Building 5">
+            <div class="building-info">
+                <h2>Building 5</h2>
+                <p><strong>Two Wheeler Parking:</strong> 45 spaces available, Price: ₹110 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 90 spaces available, Price: ₹220 (Monthly)</p>
+                <p>Building 5 is located near a shopping complex, providing convenient parking for shoppers.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building6">
+            <img src="https://img.staticmb.com/mbcontent/images/uploads/2022/10/Types-of-Parking-in-a-Housing-Society.jpg" alt="Building 6">
+            <div class="building-info">
+                <h2>Building 6</h2>
+                <p><strong>Two Wheeler Parking:</strong> 35 spaces available, Price: ₹90 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 80 spaces available, Price: ₹160 (Monthly)</p>
+                <p>Building 6 is located near a park, offering parking for visitors.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building7">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD2l1O03kitK3531OHJLva9Z0eDj8l7_WQqBFKSWiZTlKVhIK6MOZoHhZtndT-DMofJ6E&usqp=CAU" alt="Building 7">
+            <div class="building-info">
+                <h2>Building 7</h2>
+                <p><strong>Two Wheeler Parking:</strong> 55 spaces available, Price: ₹130 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 110 spaces available, Price: ₹220 (Monthly)</p>
+                <p>Building 7 is located near a hospital, providing parking for patients and visitors.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building8">
+            <img src="https://www.curopark.com/images/blog-measonry5.webp" alt="Building 8">
+            <div class="building-info">
+                <h2>Building 8</h2>
+                <p><strong>Two Wheeler Parking:</strong> 40 spaces available, Price: ₹100 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 80 spaces available, Price: ₹180 (Monthly)</p>
+                <p>Building 8 is located near a school, providing parking for staff and students.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building9">
+            <img src="https://images.adsttc.com/media/images/61f8/7e55/3e4b/3159/ff00/0053/large_jpg/image_via_parking_industry.jpg?1643675216" alt="Building 9">
+            <div class="building-info">
+                <h2>Building 9</h2>
+                <p><strong>Two Wheeler Parking:</strong> 50 spaces available, Price: ₹120 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 100 spaces available, Price: ₹220 (Monthly)</p>
+                <p>Building 9 is located in a busy commercial area, offering parking for shoppers and employees.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlz9M14qsWAdf99dvCHEbWrvYUIq3Nccuy3iLVZehMFyhjAIMukC1Yna4-GIyuefjW2hs&usqp=CAU" alt="Building 10">
+            <div class="building-info">
+                <h2>Building 10</h2>
+                <p><strong>Two Wheeler Parking:</strong> 45 spaces available, Price: ₹110 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 90 spaces available, Price: ₹200 (Monthly)</p>
+                <p>Building 10 is located near a metro station, offering parking for commuters.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building11">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRecgbBdyXzxh_743raRti_TsyZmiJFNitcyeytkHKBFx04JAXIox7LALjHi7QaVWPL2fg&usqp=CAU" alt="Building 11">
+            <div class="building-info">
+                <h2>Building 11</h2>
+                <p><strong>Two Wheeler Parking:</strong> 30 spaces available, Price: ₹90 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 60 spaces available, Price: ₹170 (Monthly)</p>
+                <p>Building 11 is located near a sports complex, providing parking for athletes and spectators.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building12">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP_1h4k6RZNcGPfcGLmWFcRgthdo6plLNw6Q5iqXYnmg&s" alt="Building 12">
+            <div class="building-info">
+                <h2>Building 12</h2>
+                <p><strong>Two Wheeler Parking:</strong> 35 spaces available, Price: ₹100 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 70 spaces available, Price: ₹160 (Monthly)</p>
+                <p>Building 12 is located near a bus terminal, offering parking for travelers.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building13">
+            <img src="https://media.licdn.com/dms/image/D4D12AQFQvoShenThsQ/article-cover_image-shrink_720_1280/0/1679720742073?e=2147483647&v=beta&t=LKMksAcqj0ibPjPD8HvT5BsVE4qLK8hQy5ylH7R-HFk" alt="Building 13">
+            <div class="building-info">
+                <h2>Building 13</h2>
+                <p><strong>Two Wheeler Parking:</strong> 60 spaces available, Price: ₹130 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 120 spaces available, Price: ₹220 (Monthly)</p>
+                <p>Building 13 is located near a shopping mall, offering parking for shoppers and employees.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building14">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFRF5VUBJNVGOdbpSpp09xO-KKK1SN_dqQ92mkEuoHw&s" alt="Building 14">
+            <div class="building-info">
+                <h2>Building 14</h2>
+                <p><strong>Two Wheeler Parking:</strong> 50 spaces available, Price: ₹110 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 100 spaces available, Price: ₹200 (Monthly)</p>
+                <p>Building 14 is located near a university, offering parking for students and faculty members.</p>
+            </div>
+        </div>
+        <!-- Add more buildings here -->
+        <div class="building" id="building15">
+            <img src="https://t4.ftcdn.net/jpg/03/30/78/85/360_F_330788577_0DDjwHh2WYlf4DQJt5d0eMqzMZ9mMy4C.jpg" alt="Building 15">
+            <div class="building-info">
+                <h2>Building 15</h2>
+                <p><strong>Two Wheeler Parking:</strong> 40 spaces available, Price: ₹100 (Monthly)</p>
+                <p><strong>Four Wheeler Parking:</strong> 80 spaces available, Price: ₹180 (Monthly)</p>
+                <p>Building 15 is located near a park, offering parking for visitors.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

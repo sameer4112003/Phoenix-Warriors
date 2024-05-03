@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Pool Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .pool-info {
+            width: calc(50% - 20px); /* 50% width with gap */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative; /* For positioning the image holder */
+            display: flex; /* Added */
+            align-items: center; /* Added */
+            justify-content: space-between; /* Added */
+            margin-bottom: 20px; /* Added */
+        }
+
+        .pool-image {
+            width: 40%; /* Set the width of the image holder */
+            height: 100%;
+            background-color: #ccc; /* Placeholder color */
+            /* You can set a background image here */
+        }
+
+        .pool-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        li strong {
+            font-weight: bold;
+        }
+        
+        .pool-info p {
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 30px;">Swimming Pool Options</h1>
+
+    <div class="container">
+        <!-- Pool 1 -->
+        <div class="pool-info" id="pool1">
+            <div>
+                <h2>Pool 1</h2>
+                <ul>
+                    <li><strong>Size:</strong> Olympic standard</li>
+                    <li><strong>Depth:</strong> 2 meters</li>
+                    <li><strong>Features:</strong> Diving boards, lap lanes, Jacuzzi</li>
+                </ul>
+                <p>Pool 1 is equipped with state-of-the-art facilities for swimming and relaxation.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://i.pinimg.com/originals/d7/be/8a/d7be8af46fb855f0d914ca66432e0895.jpg" alt="Pool 1">
+            </div>
+        </div>
+        
+        <!-- Pool 2 -->
+        <div class="pool-info" id="pool2">
+            <div>
+                <h2>Pool 2</h2>
+                <ul>
+                    <li><strong>Size:</strong> Standard</li>
+                    <li><strong>Depth:</strong> 1.5 meters</li>
+                    <li><strong>Features:</strong> Water slides, shallow area for kids</li>
+                </ul>
+                <p>Pool 2 is perfect for family fun with its water slides and kid-friendly features.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://st.hzcdn.com/simgs/pictures/swimming-pools/jones-cassia-swimming-pool-jones-foundations-img~e6918ada0d5e4708_3-6791-1-6fb3af7.jpg" alt="Pool 2">
+            </div>
+        </div>
+
+        <!-- Pool 3 -->
+        <div class="pool-info" id="pool3">
+            <div>
+                <h2>Pool 3</h2>
+                <ul>
+                    <li><strong>Size:</strong> Semi-Olympic</li>
+                    <li><strong>Depth:</strong> 1.8 meters</li>
+                    <li><strong>Features:</strong> Water volleyball, sunbathing area</li>
+                </ul>
+                <p>Pool 3 offers a relaxed atmosphere with amenities for both active and leisurely swimmers.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://images.hindustantimes.com/img/2022/12/29/550x309/Mumbai--India---November-05--2020--Workers-are-see_1672341864256.jpg" alt="Pool 3">
+            </div>
+        </div>
+
+        <!-- Pool 4 -->
+        <div class="pool-info" id="pool4">
+            <div>
+                <h2>Pool 4</h2>
+                <ul>
+                    <li><strong>Size:</strong> Small</li>
+                    <li><strong>Depth:</strong> 1.2 meters</li>
+                    <li><strong>Features:</strong> Water fountain, shaded seating area</li>
+                </ul>
+                <p>Pool 4 is ideal for relaxation and cooling off on hot days with its tranquil setting.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://static.toiimg.com/thumb/msid-69624525,width-400,height-225,resizemode-72/69624525.jpg" alt="Pool 4">
+            </div>
+        </div>
+        
+        <!-- Pool 5 -->
+        <div class="pool-info" id="pool5">
+            <div>
+                <h2>Pool 5</h2>
+                <ul>
+                    <li><strong>Size:</strong> Rooftop</li>
+                    <li><strong>Depth:</strong> 1.5 meters</li>
+                    <li><strong>Features:</strong> Infinity edge, lounge area</li>
+                </ul>
+                <p>Pool 5 offers breathtaking views and a luxurious setting for relaxation and socializing.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://4.imimg.com/data4/GA/IE/MY-571577/ajay-devgan-frp-pool-karjat-500x500.jpg" alt="Pool 5">
+            </div>
+        </div>
+
+        <!-- Pool 6 -->
+        <div class="pool-info" id="pool6">
+            <div>
+                <h2>Pool 6</h2>
+                <ul>
+                    <li><strong>Size:</strong> Olympic standard</li>
+                    <li><strong>Depth:</strong> 2 meters</li>
+                    <li><strong>Features:</strong> Diving boards, lap lanes, Jacuzzi</li>
+                </ul>
+                <p>Pool 6 is equipped with state-of-the-art facilities for swimming and relaxation.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyY1G_20TO1Nc_CyFkkZ0R-NiVVpXchwGoatn2RqD5MooXOeU_9CZ3Ao8XQ335tDSmEbc&usqp=CAU" alt="Pool 6">
+            </div>
+        </div>
+
+        <!-- Pool 7 -->
+        <div class="pool-info" id="pool7">
+            <div>
+                <h2>Pool 7</h2>
+                <ul>
+                    <li><strong>Size:</strong> Standard</li>
+                    <li><strong>Depth:</strong> 1.5 meters</li>
+                    <li><strong>Features:</strong> Water slides, shallow area for kids</li>
+                </ul>
+                <p>Pool 7 is perfect for family fun with its water slides and kid-friendly features.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://www.authenticindiatours.com/app/uploads/2019/03/15-of-the-best-swimming-pools-in-South-India-Crowne-Plaza-940x585-c-default.jpeg" alt="Pool 7">
+            </div>
+        </div>
+
+        <!-- Pool 8 -->
+        <div class="pool-info" id="pool8">
+            <div>
+                <h2>Pool 8</h2>
+                <ul>
+                    <li><strong>Size:</strong> Semi-Olympic</li>
+                    <li><strong>Depth:</strong> 1.8 meters</li>
+                    <li><strong>Features:</strong> Water volleyball, sunbathing area</li>
+                </ul>
+                <p>Pool 8 offers a relaxed atmosphere with amenities for both active and leisurely swimmers.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6750582809458/Swimming-Pool-Jababeka-Country-Club-e0b716b4-3e39-417c-aa23-acc5ea88319a.jpeg?_src=imagekit&tr=c-at_max,h-260,q-100,w-414" alt="Pool 8">
+            </div>
+        </div>
+
+        <!-- Pool 9 -->
+        <div class="pool-info" id="pool9">
+            <div>
+                <h2>Pool 9</h2>
+                <ul>
+                    <li><strong>Size:</strong> Small</li>
+                    <li><strong>Depth:</strong> 1.2 meters</li>
+                    <li><strong>Features:</strong> Water fountain, shaded seating area</li>
+                </ul>
+                <p>Pool 9 is ideal for relaxation and cooling off on hot days with its tranquil setting.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://media.assettype.com/homegrown%2Fimport%2Fimg%2Farticle%2F856-xaxcehanox-1487690151.jpg" alt="Pool 9">
+            </div>
+        </div>
+
+        <!-- Pool 10 -->
+        <div class="pool-info" id="pool10">
+            <div>
+                <h2>Pool 10</h2>
+                <ul>
+                    <li><strong>Size:</strong> Rooftop</li>
+                    <li><strong>Depth:</strong> 1.5 meters</li>
+                    <li><strong>Features:</strong> Infinity edge, lounge area</li>
+                </ul>
+                <p>Pool 10 offers breathtaking views and a luxurious setting for relaxation and socializing.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://preview.redd.it/lejezyngjmx61.png?auto=webp&s=8205d8ca4d369c07f4f2daa0cf998f00e65dc141" alt="Pool 10">
+            </div>
+        </div>
+
+        <!-- Pool 11 -->
+        <div class="pool-info" id="pool11">
+            <div>
+                <h2>Pool 11</h2>
+                <ul>
+                    <li><strong>Size:</strong> Olympic standard</li>
+                    <li><strong>Depth:</strong> 2 meters</li>
+                    <li><strong>Features:</strong> Diving boards, lap lanes, Jacuzzi</li>
+                </ul>
+                <p>Pool 11 is equipped with state-of-the-art facilities for swimming and relaxation.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://st.hzcdn.com/simgs/pictures/swimming-pools/farmhouse-by-nva-sreenag-pictures-img~82e11e050ebbd176_14-2048-1-63e689a.jpg" alt="Pool 11">
+            </div>
+        </div>
+
+        <!-- Pool 12 -->
+        <div class="pool-info" id="pool12">
+            <div>
+                <h2>Pool 12</h2>
+                <ul>
+                    <li><strong>Size:</strong> Standard</li>
+                    <li><strong>Depth:</strong> 1.5 meters</li>
+                    <li><strong>Features:</strong> Water slides, shallow area for kids</li>
+                </ul>
+                <p>Pool 12 is perfect for family fun with its water slides and kid-friendly features.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://i0.wp.com/thetalesofatraveler.com/wp-content/uploads/2015/10/Kumarakom-Lake.jpg?ssl=1" alt="Pool 12">
+            </div>
+        </div>
+
+        <!-- Pool 13 -->
+        <div class="pool-info" id="pool13">
+            <div>
+                <h2>Pool 13</h2>
+                <ul>
+                    <li><strong>Size:</strong> Semi-Olympic</li>
+                    <li><strong>Depth:</strong> 1.8 meters</li>
+                    <li><strong>Features:</strong> Water volleyball, sunbathing area</li>
+                </ul>
+                <p>Pool 13 offers a relaxed atmosphere with amenities for both active and leisurely swimmers.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-wKn2-BhU39jLD71z0ViuRbfRONzrz82X5krcAfZssRPrSzjEPzRkw0HOOYlo8xRPY6w&usqp=CAU" alt="Pool 13">
+            </div>
+        </div>
+
+        <!-- Pool 14 -->
+        <div class="pool-info" id="pool14">
+            <div>
+                <h2>Pool 14</h2>
+                <ul>
+                    <li><strong>Size:</strong> Small</li>
+                    <li><strong>Depth:</strong> 1.2 meters</li>
+                    <li><strong>Features:</strong> Water fountain, shaded seating area</li>
+                </ul>
+                <p>Pool 14 is ideal for relaxation and cooling off on hot days with its tranquil setting.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://www.authenticindiatours.com/app/uploads/2019/03/15-of-the-best-swimming-pools-in-South-India-Radisson-1400x550-c-default.jpg" alt="Pool 14">
+            </div>
+        </div>
+
+        <!-- Pool 15 -->
+        <div class="pool-info" id="pool15">
+            <div>
+                <h2>Pool 15</h2>
+                <ul>
+                    <li><strong>Size:</strong> Rooftop</li>
+                    <li><strong>Depth:</strong> 1.5 meters</li>
+                    <li><strong>Features:</strong> Infinity edge, lounge area</li>
+                </ul>
+                <p>Pool 15 offers breathtaking views and a luxurious setting for relaxation and socializing.</p>
+            </div>
+            <div class="pool-image">
+                <!-- Add an image here -->
+                <img src="https://st.hzcdn.com/simgs/78516fda04fc0e8b_3-7031/home-design.jpg" alt="Pool 15">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
